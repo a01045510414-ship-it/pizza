@@ -1,0 +1,1092 @@
+/* 전체선택자 */
+* {
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 바디 */
+body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    background-color: #fff8e6;
+    color: #3b1d0f;
+    overflow-x: hidden;
+}
+
+/* 헤더(로그인, 회원가입, 로고, 네비 전체포함) */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #ff4747;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* 로그인,회원가입 전체(컨테이너포함) */
+.member_main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 6px 20px;
+}
+
+/* 로그인,회원가입 전체 */
+.member_containers {
+    display: flex;
+    gap: 18px;
+}
+
+/* 로그인,회원가입 */
+.auth {
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* 로고, 네비케이션 전체 메인 컨테이너 */
+.logo_navbar-containers {
+    width: 100%;
+    display: flex;
+    background: #fff8e6;
+    border-bottom: 4px solid #ff4747;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 로고, 네비케이션 전체 서브 컨테이너 */
+.logo_navbar-serve-containers {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+/* 로고 이미지 */
+.logo img {
+    width: 180px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* 네비게이션 전체  */
+.navbar {
+    gap: 40px;
+    list-style: none;
+    display: flex;
+}
+
+/* 네비게이션 이름  */
+.navbar-menu .menu {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.navbar-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background-color: #ff4747;
+    transition: width 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.navbar-menu .menu:hover {
+    color: #ff4747;
+}
+
+.navbar-menu a:hover::after {
+    width: 100%;
+}
+
+/* 베너 */
+/* 피자베너, 버튼 컨테이너 */
+.banner-wrap {
+    position: relative;
+}
+
+/* 피자베너 컨테이너 */
+.pizza-banner {
+    width: 300vw;
+    height: 450px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    transition: transform 0.4s ease;
+    /* position: relative; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+}
+
+/* 베너 이미지 박스*/
+.banner-slide {
+    width: 100vw;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    /* position: absolute; */
+    /* width: 100%; */
+    /* opacity: 0; */
+}
+
+/* .banner-slide.active {
+    opacity: 1;
+} */
+
+/* 베너 이미지*/
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 베너 버튼*/
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.048);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* .prev, .next:hover {
+    background: rgba(255, 71, 71, 0.658);
+    border: 1px solid rgba(255, 71, 71, 0.658);
+} */
+
+/* 베너 버튼(오른쪽)*/
+.prev {
+    left: 5%;
+}
+
+/* 베너 버튼(왼쪽)*/
+.next {
+    right: 5%;
+}
+
+/* 배달, 포장 버튼 */
+/* 배달, 포장 버튼 박스 */
+.order-main {
+    background: linear-gradient(135deg, #ff4747, #ffb84d);
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    border-top: 4px solid #b32020;
+    border-bottom: 4px solid #b32020;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+/* 배달, 포장 전체이름 */
+.order_serve {
+    cursor: pointer;
+    display: flex;
+    background-color: #fff;
+    color: #fff;
+    width: 300px;
+    height: 80px;
+    margin-left: 60px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(179, 32, 32, 0.2);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    /* padding: 20px 60px; */
+    /* overflow: hidden; */
+    /* border-radius: 50px; */
+    /* transition: all 0.3s ease; */
+}
+
+.order_serve:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 71, 71, 0.35);
+}
+
+/* 배달 버튼*/
+.delivery {
+    background-color: #ff4747;
+}
+
+.delivery:hover {
+    background-color: #b32020;
+}
+
+/* 포장버튼 */
+.packaging {
+    background-color: #ffb84d;
+    color: #3b1d0f;
+}
+
+.packaging:hover {
+    background-color: #ffda75;
+}
+
+/* 피자 */
+/* 피자 전체 컨테이너 */
+.food_content {
+    background: linear-gradient(135deg, #ff4747, #ffb84d);
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 피자 전체 2번째 컨테이너 */
+.food_main {
+    background-color: #fff8e6;
+    width: 1280px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 60px;
+}
+
+/* 피자 제목 컨테이너 */
+.introduction_title-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* 피자 대제목 */
+.grand-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #b32020;
+    text-shadow: 2px 2px 6px rgba(255, 180, 0, 0.4);
+    letter-spacing: 2px;
+}
+
+/* 피자 소제목 */
+.subheading {
+    font-size: 1.1rem;
+    color: #5c3d1f;
+    margin-top: 10px;
+}
+
+/* 피자 카드 전체 컨테이너(ul) */
+.pizza_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    list-style: none;
+    margin-bottom: 60px;
+    /* justify-content: center;
+    align-items: center; */
+    /* padding: 0; */
+}
+
+/* 피자 카드 전체 컨테이너(li)*/
+.pizza-main {
+    flex-wrap: wrap;
+}
+
+/* 피자 카드 단일 컨테이너 */
+.pizza-serve {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pizza-serve:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(255, 71, 71, 0.25);
+}
+
+/* 피자 이미지 */
+.pizza_img-content img {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.pizza-serve:hover img {
+    transform: scale(1.05);
+}
+
+/* 피자 이름 */
+.pizza-name {
+    font-size: 1.3rem;
+    color: #b32020;
+    margin: 15px 0 10px;
+}
+
+/* 피자 소개 */
+.pizza-text {
+    color: #5c3d1f;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* 피자 가격 */
+.pizza-price {
+    font-size: 1.1rem;
+    color: #ff4747;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 피자버튼 */
+/* 피자버튼 컨테이너 */
+.view-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 피자버튼 박스 */
+.view-menu {
+    background-color: #ff4747;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 71, 71, 0.4);
+    text-decoration: none;
+    /* transition: all 0.3s ease; */
+}
+
+.view-menu:hover {
+    background-color: #ffb84d;
+    /* transform: translateY(-3px); */
+}
+
+/* 피자버튼 텍스트 */
+span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.view-content:hover span {
+    color: #3b1d0f;
+}
+
+/* 혜택 */
+/* 혜택 전체 컨테이너 */
+.benefit_content {
+    background-color: #fff8e6;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 혜택 제목 컨테이너 */
+.introduction_title-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* 혜택 대제목 */
+.benefit-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #b32020;
+    text-shadow: 2px 2px 6px rgba(255, 180, 0, 0.4);
+    letter-spacing: 2px;
+}
+
+/* 혜택 소제목 */
+.benefit {
+    font-size: 1.1rem;
+    color: #5c3d1f;
+    margin-top: 10px;
+}
+
+/* 혜택 단일 컨테이너 */
+.benefit_main {
+    background-color: #ffffff;
+    width: 1280px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+}
+
+/* 혜택 카드 전체 컨테이너 */
+.benefit-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+/* 혜택 카드 단일 컨테이너 */
+.benefit-serve {
+    background-color: #fff3d6;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    width: 350px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(255, 184, 77, 0.3);
+}
+
+.benefit-serve:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 184, 77, 0.5);
+}
+
+/* 혜택 이미지 */
+.benefit_img-content img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* 혜택 이름 */
+.benefit-name {
+    color: #b32020;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* 혜택 소개 */
+.benefit-text {
+    font-size: 0.95rem;
+    color: #3b1d0f;
+    margin-bottom: 20px;
+}
+
+/* 혜택버튼 */
+/* 혜택버튼 컨테이너 */
+.benefit-view-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 혜택버튼 박스 */
+.benefit-view {
+    background-color: #ff4747;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 71, 71, 0.4);
+    text-decoration: none;
+    /* transition: all 0.3s ease; */
+}
+
+.benefit-view:hover {
+    background-color: #ffb84d;
+    /* transform: translateY(-3px); */
+}
+
+/* 혜택버튼 텍스트 */
+.benefit-button {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.benefit-view-content:hover span {
+    color: #3b1d0f;
+}
+
+/* 기타 정보 */
+/* 기타 정보 전체 컨테이너*/
+.footer-main {
+    background-color: #3b1d0f;
+    color: #fcecc9;
+    width: 100%;
+    padding: 50px 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: center;
+    border-top: 4px solid #ff4747;
+    /* width: 90%; */
+}
+
+/* 기타 정보*/
+/* 기타 정보 컨테이너*/
+.information-main-1 {
+    color: #fff8e6;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    /* gap: 25px; */
+    /* cursor: pointer; */
+}
+
+/* 정보 */
+.information-1 {
+    color: #fff8e6;
+    display: inline;
+    margin: 20px;
+}
+
+.information-1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.information-1:hover,
+.information-1 a:hover {
+    color: #ffb84d;
+}
+
+/* 회사 정보 컨테이너*/
+.information-main-2 {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    /* margin-top: 9px; */
+}
+
+/* 회사 정보 */
+.information-2 {
+    color: #f1d9b5;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-style: normal;
+}
+
+p>a {
+    color: #f1d9b5;
+    text-decoration: none;
+}
+
+footer::after {
+    content: "🍕 Thank you for visiting our Pizza Store 🍕";
+    display: block;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #ffcf70;
+    /* opacity: 0.9; */
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* 헤더(로그인, 회원가입, 로고, 네비 전체포함) */
+    header {
+        font-size: 0.9rem;
+    }
+
+    /* 로고 이미지 */
+    .logo img {
+        width: 140px;
+    }
+
+    /* 네비케이션 전체 */
+    .navbar {
+        gap: 30px;
+    }
+
+    /* 네비게이션 이름 */
+    .navbar-menu .menu {
+        font-size: 1.0rem;
+    }
+
+    /* 베너 */
+    /* 피자베너 컨테이너 */
+    .pizza-banner {
+        height: 240px;
+    }
+
+    /* 베너 버튼 */
+    .prev,
+    .next {
+        top: 50%;
+        font-size: 1.7rem;
+        padding: 8px 11px;
+    }
+
+    /* 배달,포장버튼 */
+    /* 배달, 포장 버튼 박스 */
+    .order-main {
+        gap: 40px;
+        padding: 65px 0;
+    }
+
+    /* 배달, 포장 전체이름 */
+    .order_serve {
+        width: 260px;
+        height: 74px;
+        font-size: 1.2rem;
+        /* margin: 0; */
+    }
+
+    /* 피자 */
+    /* 피자 전체 2번째 컨테이너 */
+    .food_main {
+        width: 900px;
+        padding: 60px 180px;
+    }
+
+    /* 피자 대제목 */
+    .grand-title {
+        font-size: 37px;
+    }
+
+    /* 피자 소제목 */
+    .subheading {
+        font-size: 16px;
+    }
+
+    /* 피자 카드 전체 컨테이너(ul) */
+    .pizza_content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 피자 카드 단일 컨테이너 */
+    .pizza-serve {
+        width: 240px;
+    }
+
+    /* 피자 이미지 */
+    .pizza_img-content img {
+        width: 85%;
+    }
+
+    /* 피자 이름 */
+    .pizza-name {
+        font-size: 1.2rem;
+    }
+
+    /* 피자 소개 */
+    .pizza-text {
+        font-size: 0.9rem;
+    }
+
+    /* 피자 가격 */
+    .pizza-price {
+        font-size: 1.1rem;
+    }
+
+    /* 피자버튼 */
+    /* 피자버튼 박스 */
+    .view-menu {
+        padding: 20px 50px;
+    }
+
+    /* 피자 버튼 텍스트 */
+    .view-menu>span {
+        font-size: 18px;
+    }
+
+    /* 혜택 */
+    /* 혜택 단일 컨테이너 */
+    .benefit_main {
+        width: 900px;
+    }
+
+    /* 헤택 대제목 */
+    .benefit-title {
+        font-size: 37px;
+    }
+
+    /* 혜택 소제목 */
+    .benefit {
+        font-size: 16px;
+    }
+
+    /* 혜택 카드 전체 컨테이너 */
+    .benefit-content {
+        flex-wrap: wrap;
+    }
+
+    /* 혜택 카드 단일 컨테이너 */
+    .benefit-serve {
+        width: 300px;
+    }
+
+    /* 혜택 이미지 */
+    .benefit_img-content img {
+        width: 145px;
+    }
+
+    /* 혜택 이름 */
+    .benefit-name {
+        font-size: 1.5rem;
+    }
+
+    /* 혜택 소개 */
+    .benefit-text {
+        font-size: 0.9em;
+    }
+
+    /* 혜택버튼 */
+    /* 혜택버튼 박스 */
+    .benefit-view {
+        padding: 15px 40px;
+    }
+
+    /* 헤택 버튼 텍스트 */
+    .benefit-button {
+        font-size: 16px;
+    }
+
+    /* 정보 */
+    .information-1 {
+        font-size: 0.95rem;
+    }
+
+    /* 회사정보 */
+    .information-2 {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 헤더(로그인, 회원가입, 로고, 네비 전체포함) */
+    header {
+        font-size: 0.8rem;
+    }
+
+    /* 로고 이미지 */
+    .logo img {
+        width: 110px;
+    }
+
+    /* 네비케이션 전체 */
+    .navbar {
+        gap: 25px;
+    }
+
+    /* 네비게이션 이름 */
+    .navbar-menu .menu {
+        font-size: 1.0rem;
+    }
+
+    /* 베너 */
+    /* 피자베너 컨테이너 */
+    .pizza-banner {
+        height: 180px;
+    }
+
+    /* 베너 버튼 */
+    .prev,
+    .next {
+        top: 50%;
+        font-size: 1.4rem;
+        padding: 8px 11px;
+    }
+
+    /* 배달,포장버튼 */
+    /* 배달, 포장 버튼 박스 */
+    .order-main {
+        gap: 40px;
+        padding: 50px 0;
+    }
+
+    /* 배달, 포장 전체이름 */
+    .order_serve {
+        width: 235px;
+        height: 70px;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    /* 피자 */
+    /* 피자 전체 2번째 컨테이너 */
+    .food_main {
+        width: 650px;
+        padding: 60px 100px;
+    }
+
+    /* 피자 대제목 */
+    .grand-title {
+        font-size: 1.9rem;
+    }
+
+    /* 피자 소제목 */
+    .subheading {
+        font-size: 0.85rem;
+    }
+
+    /* 피자 카드 전체 컨테이너(ul) */
+    .pizza_content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 피자 카드 단일 컨테이너 */
+    .pizza-serve {
+        width: 200px;
+    }
+
+    /* 피자 이름 */
+    .pizza-name {
+        font-size: 1.1rem;
+    }
+
+    /* 피자 소개 */
+    .pizza-text {
+        font-size: 0.85rem;
+    }
+
+    /* 피자 가격 */
+    .pizza-price {
+        font-size: 1.0rem;
+    }
+
+    /* 피자버튼 */
+    /* 피자버튼 박스 */
+    .view-menu {
+        padding: 10px 30px;
+    }
+
+    /* 피자 버튼 텍스트 */
+    .view-menu>span {
+        font-size: 0.9rem;
+    }
+
+    /* 혜택 */
+    /* 혜택 단일 컨테이너 */
+    .benefit_main {
+        width: 650px;
+    }
+
+    /* 헤택 대제목 */
+    .benefit-title {
+        font-size: 2.0rem;
+    }
+
+    /* 혜택 소제목 */
+    .benefit {
+        font-size: 0.9rem;
+    }
+
+    /* 혜택 카드 전체 컨테이너 */
+    .benefit-content {
+        flex-wrap: wrap;
+    }
+
+    /* 혜택 카드 단일 컨테이너 */
+    .benefit-serve {
+        width: 300px;
+    }
+
+    /* 혜택 소개 */
+    .benefit-text {
+        font-size: 0.81em;
+    }
+
+    /* 혜택버튼 */
+    /* 혜택버튼 박스 */
+    .benefit-view {
+        padding: 10px 30px;
+    }
+
+    /* 헤택 버튼 텍스트 */
+    .benefit-button {
+        font-size: 0.8rem;
+    }
+
+    /* 정보 */
+    .information-1 {
+        font-size: 0.9rem;
+    }
+
+    /* 회사정보 */
+    .information-2 {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 601px) {
+
+    /* 헤더(로그인, 회원가입, 로고, 네비 전체포함) */
+    header {
+        font-size: 0.7rem;
+    }
+
+    /* 로고, 네비케이션 전체 서브 컨테이너 */
+    .logo_navbar-serve-containers {
+        padding: 15px 13px;
+    }
+
+    /* 로고 이미지 */
+    .logo img {
+        width: 100px;
+    }
+
+    /* 네비케이션 전체 */
+    .navbar {
+        gap: 15px;
+    }
+
+    /* 네비게이션 이름 */
+    .navbar-menu .menu {
+        font-size: 0.9rem;
+    }
+
+    /* 베너 */
+    /* 피자베너 컨테이너 */
+    .pizza-banner {
+        height: 140px;
+    }
+
+    /* 베너 버튼 */
+    .prev,
+    .next {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    /* 배달,포장버튼 */
+    /* 배달, 포장 버튼 박스 */
+    .order-main {
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    /* 배달, 포장 전체이름 */
+    .order_serve {
+        width: 195px;
+        height: 60px;
+        font-size: 0.97rem;
+    }
+
+    /* 피자 */
+    /* 피자 전체 2번째 컨테이너 */
+    .food_main {
+        width: 500px;
+        padding: 70px;
+    }
+
+    /* 피자 대제목 */
+    .grand-title {
+        font-size: 25px;
+    }
+
+    /* 피자 소제목 */
+    .subheading {
+        font-size: 0.8rem;
+    }
+
+    /* 피자 카드 전체 컨테이너(ul) */
+    .pizza_content {
+        flex-wrap: wrap;
+        /* display: flex; */
+    }
+
+    /* 피자 카드 단일 컨테이너*/
+    .pizza-serve {
+        width: 160px;
+        /* margin: 0; */
+    }
+
+    /* 피자 이미지 */
+    .pizza_img-content img {
+        width: 90%;
+    }
+
+    /* 피자 이름 */
+    .pizza-name {
+        font-size: 1.0rem;
+    }
+
+    /* 피자 소개 */
+    .pizza-text {
+        font-size: 0.8rem;
+    }
+
+    /* 피자 가격 */
+    .pizza-price {
+        font-size: 1rem;
+    }
+
+    /* 피자버튼 */
+    /* 피자버튼 박스 */
+    .view-menu {
+        padding: 9px 25px;
+    }
+
+    /* 피자 버튼 텍스트 */
+    .view-menu>span {
+        font-size: 0.8rem;
+    }
+
+    /* 혜택 */
+    /* 혜택 단일 컨테이너 */
+    .benefit_main {
+        width: 500px;
+    }
+
+    /* 헤택 대제목 */
+    .benefit-title {
+        font-size: 1.8rem;
+    }
+
+    /* 혜택 소제목 */
+    .benefit {
+        font-size: 0.8rem;
+    }
+
+    /* 혜택 카드 단일 컨테이너 */
+    .benefit-serve {
+        width: 290px;
+    }
+
+    /* 혜택 이미지 */
+    .benefit_img-content img {
+        width: 125px;
+    }
+
+    /* 혜택 이름 */
+    .benefit-name {
+        font-size: 1.28rem;
+    }
+
+    /* 혜택 소개 */
+    .benefit-text {
+        font-size: 0.8em;
+    }
+
+    /* 혜택버튼 */
+    /* 혜택버튼 박스 */
+    .benefit-view {
+        padding: 9px 25px;
+    }
+
+    /* 헤택 버튼 텍스트 */
+    .benefit-button {
+        font-size: 0.8rem;
+    }
+
+    /* 기타정보 */
+    .information-1 {
+        font-size: 0.8rem;
+    }
+
+    /* 회사정보 */
+    .information-2 {
+        font-size: 0.7rem;
+    }
+}
